@@ -1,0 +1,28 @@
+# server configuration
+server:
+    port: 9999
+
+# Settings for JsonP
+jsonp: 
+    # The name of the querystring-parameter from
+    # where the jsonp-callback-method will be extracted
+    # 
+    # ex /?callback=myfunc -> mycfunc({ /*  The data */ })
+    callbackQueryStringParameterName: "callback" 
+
+# List of services
+services:
+    # Example proxy-service that proxies requests
+    # from root /google to http://www.google.com
+    # 
+    # Example
+    # http://localhost:9999/google/abc will become
+    # http://www.google.com/abc
+    - basePath: "/google"                       
+      remotePath: "http://www.google.com"    
+
+    - basePath: "/schmoogle"
+      remotePath: "http://www.schmoogle.com"
+
+    - basePath: "/ch"
+      remotePath: "http://www.ch.dk"
